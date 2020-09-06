@@ -20,7 +20,9 @@ class CustomersController extends Controller
 
         $customers = Customer::all();
 
-        return view('admin.customers.index', compact('customers'));
+        $bookings = Booking::get();
+
+        return view('admin.customers.index', compact('customers', 'bookings'));
     }
 
     public function create()

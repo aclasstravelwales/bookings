@@ -14,8 +14,8 @@ class CreateCustomersTable extends Migration
             $table->time('pickup_time');
             $table->string('where_from');
             $table->string('where_to');
-            $table->string('driver');
-            $table->string('vehicle');
+            $table->string('driver')->nullable();
+            $table->string('vehicle')->nullable();
             $table->boolean('wheelchair')->default(0)->nullable();
             $table->timestamps();
             $table->softDeletes();
