@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Customer;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Http\Response;
 
 class StoreCustomerRequest extends FormRequest
 {
@@ -35,16 +35,16 @@ class StoreCustomerRequest extends FormRequest
                 'date_format:' . config('panel.time_format'),
             ],
             'where_from'      => [
+                'string',
                 'required',
             ],
             'where_to'        => [
-                'required',
-            ],
-            'driver'          => [
+                'string',
                 'required',
             ],
             'vehicle'         => [
-                'required',
+                'string',
+                'nullable',
             ],
         ];
     }

@@ -9,7 +9,7 @@ class HomeController
     public function index()
     {
         $settings1 = [
-            'chart_title'           => 'Bookings',
+            'chart_title'           => 'Today\'s Journey\'s',
             'chart_type'            => 'latest_entries',
             'report_type'           => 'group_by_date',
             'model'                 => 'App\\Customer',
@@ -17,9 +17,10 @@ class HomeController
             'group_by_period'       => 'day',
             'aggregate_function'    => 'count',
             'filter_field'          => 'created_at',
+            'filter_days'           => '7',
             'group_by_field_format' => 'd/m/Y',
-            'column_class'          => 'col-md-12',
-            'entries_number'        => '20',
+            'column_class'          => 'col-md-3',
+            'entries_number'        => '5',
             'fields'                => [
                 'pickup_date'   => '',
                 'pickup_time'   => '',

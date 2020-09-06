@@ -68,8 +68,8 @@
                 <span class="help-block">{{ trans('cruds.customer.fields.where_to_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required">{{ trans('cruds.customer.fields.driver') }}</label>
-                <select class="form-control {{ $errors->has('driver') ? 'is-invalid' : '' }}" name="driver" id="driver" required>
+                <label>{{ trans('cruds.customer.fields.driver') }}</label>
+                <select class="form-control {{ $errors->has('driver') ? 'is-invalid' : '' }}" name="driver" id="driver">
                     <option value disabled {{ old('driver', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                     @foreach(App\Customer::DRIVER_SELECT as $key => $label)
                         <option value="{{ $key }}" {{ old('driver', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
@@ -83,8 +83,8 @@
                 <span class="help-block">{{ trans('cruds.customer.fields.driver_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="vehicle">{{ trans('cruds.customer.fields.vehicle') }}</label>
-                <input class="form-control {{ $errors->has('vehicle') ? 'is-invalid' : '' }}" type="text" name="vehicle" id="vehicle" value="{{ old('vehicle', '') }}" required>
+                <label for="vehicle">{{ trans('cruds.customer.fields.vehicle') }}</label>
+                <input class="form-control {{ $errors->has('vehicle') ? 'is-invalid' : '' }}" type="text" name="vehicle" id="vehicle" value="{{ old('vehicle', '') }}">
                 @if($errors->has('vehicle'))
                     <div class="invalid-feedback">
                         {{ $errors->first('vehicle') }}
